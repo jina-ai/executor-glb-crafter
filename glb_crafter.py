@@ -14,7 +14,7 @@ class GlbCrafter(Executor):
     """
     def __init__(self, n_samples: int = 2048, **kwargs):
         """
-        The transformer torch encoder encodes sentences into embeddings.
+        `GlbCrafter` creates a blog by sampling n_samples points from a Document containing a glb file in its blob
         :param n_samples: number of points to sample from the 3D mesh.
         """
         super().__init__(**kwargs)
@@ -49,5 +49,3 @@ class GlbCrafter(Executor):
             d.convert_uri_to_buffer()  # convert to buffer because if uri is remote we need to download
             d.tags = get_tags(d.content, uri)
             d.blob = self.sample(d.content, d.id)
-            self.logger.info(f'd.blob length: {len(d.blob)}')
-        self.logger.info('done')
