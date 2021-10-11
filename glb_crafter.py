@@ -35,6 +35,11 @@ class GlbCrafter(Executor):
 
     @requests(on=['/index', '/search'])
     def craft(self, docs: Optional[DocumentArray] = None, **kwargs):
+        """
+        Receives Documents containing glb files either in uri or in blob, samples n_samples points and produces blob
+            with shape (n_samples, 3)
+        :param docs: DocumentArray containing Documents with glb files
+        """
         if not docs:
             return
 
