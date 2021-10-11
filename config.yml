@@ -1,0 +1,4 @@
+jtype: GlbCrafter
+metas:
+  py_modules:
+    - glb_crafter.py

@@ -1,0 +1,4 @@
+pyenchant
+inflect
+trimesh
+Pillow

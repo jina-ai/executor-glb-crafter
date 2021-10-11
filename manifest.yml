@@ -1,0 +1,5 @@
+manifest_version: 1
+name: GlbCrafter
+description: '`GlbCrafter` retrieves the 3D mesh from a Document containing a .glb file and samples `n_samples` points'
+url: https://github.com/jina-ai/executor-glb-crafter
+keywords: [3d, mesh, glb, pointnet, crafter]
