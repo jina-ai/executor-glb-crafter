@@ -1,5 +1,5 @@
 jtype: GlbCrafter
 metas:
   py_modules:
-    - glb_crafter.py
     - utils.py
+    - glb_crafter.py
