@@ -1,6 +1,6 @@
 import pytest
 from jina import Document, DocumentArray
-from glb_crafter import GlbCrafter
+from executor import GlbCrafter
 
 
 @pytest.fixture
