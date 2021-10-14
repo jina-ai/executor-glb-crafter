@@ -4,7 +4,7 @@ from jina import Document, DocumentArray, Executor, requests
 from jina.logging.logger import JinaLogger
 import trimesh
 
-from utils import get_tags, get_mesh
+from .utils import get_tags, get_mesh
 
 
 class GlbCrafter(Executor):
