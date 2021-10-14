@@ -1,0 +1,10 @@
+jtype: Flow
+version: '1'
+with:
+  workspace: $WORKSPACE
+executors:
+  - name: crafter
+    uses:
+      jtype: GlbCrafter
+      with:
+        n_samples: 1024

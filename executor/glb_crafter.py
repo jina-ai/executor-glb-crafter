@@ -4,7 +4,7 @@ from jina import Document, DocumentArray, Executor, requests
 from jina.logging.logger import JinaLogger
 import trimesh
 
-from utils import get_tags, get_mesh
+from .utils import get_tags, get_mesh
 
 
 class GlbCrafter(Executor):
@@ -14,7 +14,7 @@ class GlbCrafter(Executor):
     """
     def __init__(self, n_samples: int = 2048, **kwargs):
         """
-        The transformer torch encoder encodes sentences into embeddings.
+        `GlbCrafter` creates a blob by sampling n_samples points from a Document containing a glb file in its blob
         :param n_samples: number of points to sample from the 3D mesh.
         """
         super().__init__(**kwargs)
@@ -35,6 +35,11 @@ class GlbCrafter(Executor):
 
     @requests(on=['/index', '/search'])
     def craft(self, docs: Optional[DocumentArray] = None, **kwargs):
+        """
+        Receives Documents containing glb files either in uri or in blob, samples n_samples points and produces blob
+            with shape (n_samples, 3)
+        :param docs: DocumentArray containing Documents with glb files
+        """
         if not docs:
             return
 
@@ -49,5 +54,3 @@ class GlbCrafter(Executor):
             d.convert_uri_to_buffer()  # convert to buffer because if uri is remote we need to download
             d.tags = get_tags(d.content, uri)
             d.blob = self.sample(d.content, d.id)
-            self.logger.info(f'd.blob length: {len(d.blob)}')
-        self.logger.info('done')
