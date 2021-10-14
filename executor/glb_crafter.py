@@ -14,7 +14,7 @@ class GlbCrafter(Executor):
     """
     def __init__(self, n_samples: int = 2048, **kwargs):
         """
-        `GlbCrafter` creates a blog by sampling n_samples points from a Document containing a glb file in its blob
+        `GlbCrafter` creates a blob by sampling n_samples points from a Document containing a glb file in its blob
         :param n_samples: number of points to sample from the 3D mesh.
         """
         super().__init__(**kwargs)
