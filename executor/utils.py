@@ -59,5 +59,4 @@ def get_mesh(content: bytes):
         glb_file.write(content)
         glb_file.flush()
         mesh = trimesh.load_mesh(glb_file.name)
-    mesh = mesh.deduplicated()
     return mesh

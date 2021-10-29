@@ -27,9 +27,9 @@ class GlbCrafter(Executor):
             raise TypeError('mesh is of unsupported type')
         geo = list(mesh.geometry.values())
         if not geo:
-            raise ValueError(f'Doc id: {doc_id}''s mesh does not have any geometry objects')
+            raise ValueError(f'Doc id: {doc_id}s mesh does not have any geometry objects')
         if len(geo) > 1:
-            self.logger.info(f'Doc id: {doc_id}''s mesh has {len(geo)} geometry object; get the first one in the '
+            self.logger.info(f'Doc id: {doc_id}s mesh has {len(geo)} geometry object; get the first one in the '
                              'glb file')
         return geo[0].sample(self.n_samples)
 
